@@ -17,6 +17,12 @@
             <input id="storageFile" class='input' type="text">
             <br>
             <br>
+            <a id='main-text'>Enter another storage location for the replays</a><br>
+            <a id='main-text'>Ex. M:/R6MatchReplays/AmazingMatches</a>
+            <br>
+            <input type="text" id="specialStorage" class="input">
+            <br>
+            <br>
             <a id="main-text">How often (in seconds) do you want the script to loop?</a>
             <br>
             <input type="number" id="time" class="input">
@@ -37,6 +43,7 @@
                 e.preventDefault();
                 const mainFolder = document.querySelector('#mainFile').value;
                 const storageFolder = document.querySelector('#storageFile').value;
+                const specialStorage = document.querySelector('#specialStorage').value;
                 const time = document.querySelector('#time').value;
                 const button = document.querySelector('.submit');
 
@@ -47,6 +54,7 @@
                 const config = {
                     'mainFolder': mainFolder,
                     'storageFolder': storageFolder,
+                    'specialStorage': specialStorage,
                     'time': time
                 }
                 ipcRenderer.send('save:config', config);
@@ -55,11 +63,13 @@
             ipcRenderer.on('load:config', (e, storage) => {
                 const mainFolder = document.querySelector('#mainFile');
                 const storageFolder = document.querySelector('#storageFile');
+                const specialStorage = document.querySelector('#specialStorage');
                 const time = document.querySelector('#time');
                 const config = storage.config
 
                 mainFolder.value = config.mainFolder;
                 storageFolder.value = config.storageFolder;
+                specialStorage.value = config.specialStorage;
                 time.value = config.time;
             });
         </script>

@@ -198,3 +198,27 @@ ipcMain.on('script:toggle', (e, status) => {
     };
 
 });
+
+ipcMain.on('fs:main', () => {
+    const config = storage.config;
+    const file = fs.readdirSync(storage.config.mainFolder);
+    if (file.length >= 2) {
+        const a = config.mainFolder + `/${file[0]}`;
+        const b = config.storageFolder + `/${file[0]}`;
+        fs.rename(a,b,function (err) {
+            if (err) throw err;
+        })
+    }
+});
+
+ipcMain.on('fs:special', () => {
+    const config = storage.config;
+    const file = fs.readdirSync(storage.config.mainFolder);
+    if (file.length >= 2) {
+        const a = config.mainFolder + `/${file[0]}`;
+        const b = config.specialStorage + `/${file[0]}`;
+        fs.rename(a,b,function (err) {
+            if (err) throw err;
+        })
+    }
+})
