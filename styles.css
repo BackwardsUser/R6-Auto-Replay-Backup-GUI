@@ -52,6 +52,46 @@ body {
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
 
+#forcesave {
+    background-color: rgba(145, 145, 145, 255);
+    border: none;
+    color: white;
+    padding: 8px 32px;
+    font-family: quicksand;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 17px;
+    border-radius: 4px;
+}
+
+#forcesave:hover {
+    background: rgba(175, 175, 175, 255);
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+#specialsave {
+    background-color: rgba(225, 225, 0, 255);
+    border: none;
+    color: black;
+    padding: 8px 32px;
+    font-family: quicksand;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 17px;
+    border-radius: 4px;
+}
+
+#specialsave:hover {
+    background: rgba(255, 255, 0, 255);
+    color: black;
+    cursor: pointer;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
 #off {
     background-color: rgba(59, 165, 93, 255);
     border: none;
