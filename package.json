@@ -9,8 +9,10 @@
   },
   "author": "BackwardsUser",
   "license": "MIT",
+  "dependencies": {
+    "electron": "^42.5.0"
+  },
   "devDependencies": {
-    "electron": "^28.1.4",
     "electron-packager": "^17.1.2"
   }
 }
